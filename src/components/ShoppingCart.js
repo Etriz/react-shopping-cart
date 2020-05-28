@@ -5,7 +5,7 @@ import { CartContext } from "../contexts/CartContext";
 import Item from "./ShoppingCartItem";
 
 const ShoppingCart = () => {
-  const { cart, removeItem } = useContext(CartContext);
+  const { cart, removeItem, clearCart } = useContext(CartContext);
 
   const getCartTotal = () => {
     return cart
@@ -23,7 +23,7 @@ const ShoppingCart = () => {
 
       <div className="shopping-cart__checkout">
         <p>Total: ${getCartTotal()}</p>
-        <button>Checkout</button>
+        <button onClick={clearCart}>Checkout</button>
       </div>
     </div>
   );
