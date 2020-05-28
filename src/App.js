@@ -16,12 +16,14 @@ function App() {
 
   const addItem = (item) => {
     // add the given item to the cart
-    setCart([...cart, item]);
+    setCart([...cart, { ...item, id: Date.now() }]);
   };
 
-  const removeItem = (item) => {
+  const removeItem = (id) => {
     // add the given item to the cart
-    setCart([...cart, item]);
+    console.log(id);
+
+    setCart(cart.filter((item) => item.id !== id));
   };
 
   return (
